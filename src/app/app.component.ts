@@ -12,8 +12,7 @@ export class AppComponent {
   sUrl: SafeUrl;
   
   constructor(private sanitizer: DomSanitizer){
-    this.url = `https://www.youtube.com/embed/IVEwemk-TRU`;
-    this.sUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
+    
   }
   
   refresh(){

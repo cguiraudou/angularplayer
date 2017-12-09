@@ -1,0 +1,7 @@
+
+.rectangle {
+  height:  315px;
+  width: 560px;
+  border-color: black;
+  border-style: dashed;
+}
