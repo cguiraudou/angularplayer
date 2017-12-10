@@ -25,30 +25,20 @@ export class HistoryComponent implements OnInit {
     });
   }
 
-
-  myAccFunc1() {
-    var x = document.getElementById("menuHist");
+  
+  //fonction accordéon css
+  myAccFunc(menu:string) {
+    var x = document.getElementById(menu);
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
-        x.previousElementSibling.className += " w3-green";
+        x.previousElementSibling.className += " w3-red";
     } else { 
         x.className = x.className.replace(" w3-show", "");
         x.previousElementSibling.className = 
-        x.previousElementSibling.className.replace(" w3-green", "");
+        x.previousElementSibling.className.replace(" w3-red", "");
     }
   }
   
-  myAccFunc2() {
-    var x = document.getElementById("menuBook");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-        x.previousElementSibling.className += " w3-green";
-    } else { 
-        x.className = x.className.replace(" w3-show", "");
-        x.previousElementSibling.className = 
-        x.previousElementSibling.className.replace(" w3-green", "");
-    }
-  }
   ngOnInit() {
     
     
