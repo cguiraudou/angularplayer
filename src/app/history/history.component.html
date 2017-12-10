@@ -1,0 +1,7 @@
+<h1> History </h1>
+
+<ul>
+  <li *ngFor="let url of history" (click)="changeUrl(url)">
+    {{url}}
+  </li>
+</ul>

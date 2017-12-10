@@ -12,3 +12,6 @@
   <div class='rectangle'></div>
 </ng-template>
 
+
+<app-history [history]="historyUrl" (urlSender)="urlHistoryClick($event);"> </app-history>
+
