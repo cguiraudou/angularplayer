@@ -17,6 +17,20 @@ export class AppComponent {
   constructor(private sanitizer: DomSanitizer){
     this.historyUrl= [];
     this.bookmarkedUrl = [];
+    
+    //recup data localstorage
+    //history 
+    var nbH = Number( localStorage.getItem('history'));
+    for(var i=0; i< nbH; i++){
+      this.historyUrl.push(localStorage.getItem('h'+i));
+      console.log(localStorage.getItem('h'+i));
+    }
+    //bookmarks
+    var nbB= Number( localStorage.getItem('bookmarks'));
+    for(i=0; i< nbB; i++){
+      this.bookmarkedUrl.push(localStorage.getItem('b'+i));
+      console.log(localStorage.getItem('b'+i));
+    }
   }
   
   refresh(){
@@ -31,15 +45,15 @@ export class AppComponent {
     
     localStorage.setItem('h'+this.historyUrl.length, this.url);
     this.historyUrl.push(this.url);
-    localStorage.setItem('history', this.historyUrl.length);
-
+    localStorage.setItem('history',''+ this.historyUrl.length);
+    this.userInput = '';
   }
    
   bookmark(){
     if(this.url) {
       localStorage.setItem('b'+this.bookmarkedUrl.length, this.url)
       this.bookmarkedUrl.push(this.url);  
-      localStorage.setItem('bookmarks', this.bookmarkedUrl.length);
+      localStorage.setItem('bookmarks',''+this.bookmarkedUrl.length);
     }
   }
   

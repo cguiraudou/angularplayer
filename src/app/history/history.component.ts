@@ -15,16 +15,20 @@ export class HistoryComponent implements OnInit {
   
   @Output()
   urlSender = new EventEmitter();
+    
+  constructor(
+  ) { }
   
   changeUrl(url:string){
     this.urlSender.emit({
       value: url
     });
   }
-  
-  constructor() { }
+
 
   ngOnInit() {
+    
+    
   }
 
 }
