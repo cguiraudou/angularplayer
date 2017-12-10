@@ -12,6 +12,7 @@ export class HistoryComponent implements OnInit {
   @Input()
   bookmarks: string[];
   
+  
   @Output()
   urlSender = new EventEmitter();
   

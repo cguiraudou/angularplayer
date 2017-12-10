@@ -28,11 +28,19 @@ export class AppComponent {
     }
     //safe url
     this.sUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
+    
+    localStorage.setItem('h'+this.historyUrl.length, this.url);
     this.historyUrl.push(this.url);
+    localStorage.setItem('history', this.historyUrl.length);
+
   }
-  
+   
   bookmark(){
-    this.bookmarkedUrl.push(this.url);  
+    if(this.url) {
+      localStorage.setItem('b'+this.bookmarkedUrl.length, this.url)
+      this.bookmarkedUrl.push(this.url);  
+      localStorage.setItem('bookmarks', this.bookmarkedUrl.length);
+    }
   }
   
   urlHistoryClick(event){
