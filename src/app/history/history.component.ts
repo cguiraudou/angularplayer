@@ -9,6 +9,8 @@ export class HistoryComponent implements OnInit {
 
   @Input()
   history: string[];
+  @Input()
+  bookmarks: string[];
   
   @Output()
   urlSender = new EventEmitter();

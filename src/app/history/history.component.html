@@ -5,3 +5,11 @@
     {{url}}
   </li>
 </ul>
+
+<h1> Bookmarks </h1>
+
+<ul>
+  <li *ngFor="let url of bookmarks" (click)="changeUrl(url)">
+    {{url}}
+  </li>
+</ul>

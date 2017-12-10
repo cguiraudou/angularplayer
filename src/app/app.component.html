@@ -1,5 +1,5 @@
 <div>
-<input [(ngModel)]="userInput" id="formurl" placeholder="youtube URL">
+<input [(ngModel)]="userInput" id="formurl" placeholder="youtube URL" size = "50">
 <button (click)="refresh()">Refresh</button> 
 </div>
 
@@ -10,6 +10,7 @@
   <div class='rectangle'></div>
 </ng-template>
 
+<button (click)="bookmark()">Bookmark</button> 
 
-<app-history [history]="historyUrl" (urlSender)="urlHistoryClick($event);"> </app-history>
+<app-history [history]="historyUrl" [bookmarks]= "bookmarkedUrl" (urlSender)="urlHistoryClick($event);"> </app-history>
 
