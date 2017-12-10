@@ -1,16 +1,20 @@
-<div>
-<input [(ngModel)]="userInput" id="formurl" placeholder="youtube URL" size = "50">
-<button (click)="refresh()">Refresh</button> 
-</div>
-
-<div *ngIf="sUrl; else player" > 
-  <iframe width="560" height="315" [src]="sUrl" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-</div>
-<ng-template #player >
-  <div class='rectangle'></div>
-</ng-template>
-
-<button (click)="bookmark()">Bookmark</button> 
-
-<app-history [history]="historyUrl" [bookmarks]= "bookmarkedUrl" (urlSender)="urlHistoryClick($event);"> </app-history>
-
+<body>
+  <section id='video'>
+    <input [(ngModel)]="userInput" id="formurl" placeholder="youtube URL" size = "50">
+    <button (click)="refresh()">Refresh</button> 
+       
+    <div id='player'>
+      <div *ngIf="sUrl; else player" > 
+        <iframe width="560" height="315" [src]="sUrl" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+      </div>
+      <ng-template #player >
+        <div class='rectangle'></div>
+      </ng-template>
+    </div>
+    
+    <button (click)="bookmark()">Bookmark this video</button> 
+  </section>
+  <section id='sidebar'>
+    <app-history [history]="historyUrl" [bookmarks]= "bookmarkedUrl" (urlSender)="urlHistoryClick($event);"> </app-history>
+  </section>
+</body>

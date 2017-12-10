@@ -23,13 +23,13 @@ export class AppComponent {
     var nbH = Number( localStorage.getItem('history'));
     for(var i=0; i< nbH; i++){
       this.historyUrl.push(localStorage.getItem('h'+i));
-      console.log(localStorage.getItem('h'+i));
+      //console.log(localStorage.getItem('h'+i));
     }
     //bookmarks
     var nbB= Number( localStorage.getItem('bookmarks'));
     for(i=0; i< nbB; i++){
       this.bookmarkedUrl.push(localStorage.getItem('b'+i));
-      console.log(localStorage.getItem('b'+i));
+      //console.log(localStorage.getItem('b'+i));
     }
   }
   
