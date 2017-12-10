@@ -1,9 +1,7 @@
 <div>
-<input [(ngModel)]="url" id="formurl" placeholder="youtube URL">
+<input [(ngModel)]="userInput" id="formurl" placeholder="youtube URL">
 <button (click)="refresh()">Refresh</button> 
 </div>
-
-
 
 <div *ngIf="sUrl; else player" > 
   <iframe width="560" height="315" [src]="sUrl" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>

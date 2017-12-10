@@ -8,6 +8,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  userInput: string;
   url:string;
   sUrl: SafeUrl;
   historyUrl: string[];
@@ -17,6 +18,12 @@ export class AppComponent {
   }
   
   refresh(){
+    //formatting url
+    if(!this.userInput.includes("embed"){
+      this.url='https://www.youtube.com/embed/'+this.userInput.substring(this.userInput.indexOf("?v=")+3);
+      console.log(this.url);
+    }
+    //safe url
     this.sUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
     this.historyUrl.push(this.url);
   }
